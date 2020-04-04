@@ -1,4 +1,4 @@
 /node_modules/
 /public/build/
-
+/public/custom.css
 .DS_Store

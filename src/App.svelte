@@ -1,30 +1,69 @@
 <script>
-	export let name;
+  //export let name;
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<style lang="scss">
+  $color: red;
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  h1 {
+    color: $color;
+  }
 </style>
+
+<section class="hero is-medium is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <h1 class="title is-2 is-spaced">Hello Bulma!</h1>
+          <h2 class="subtitle is-4">
+            Congratulations! You're running the
+            <strong>Bulma start</strong>
+            project.
+            <br />
+            It includes everything you need to
+            <strong>build your own website</strong>
+            with Bulma.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="columns">
+    <div class="column">First column</div>
+    <div class="column">Second column</div>
+    <div class="column">Third column</div>
+  </div>
+</section>
+<footer class="footer has-text-centered">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2-desktop">
+        <p>
+          <strong class="has-text-weight-semibold">
+            <a href="https://www.npmjs.com/package/bulma-start">
+              bulma-start@0.0.3
+            </a>
+          </strong>
+        </p>
+        <p>
+          <small>
+            Source code licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+          </small>
+        </p>
+        <p style="margin-top: 1rem;">
+          <a href="http://bulma.io">
+            <img
+              src="made-with-bulma.png"
+              alt="Made with Bulma"
+              width="128"
+              height="24" />
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

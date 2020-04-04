@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
+    "dev": "concurrently \"rollup -c -w\" \"npm run css-watch\"",
+    "start": "sirv public",
+    "css-build": "node-sass --omit-source-map-url src/scss/custom.scss public/custom.css",
+    "css-watch": "npm run css-build -- --watch"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "bulma": "^0.8.1",
+    "concurrently": "^5.1.0",
+    "node-sass": "^4.13.1",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.20.1"
+    "svelte": "^3.20.1",
+    "svelte-preprocess": "^3.7.1"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
