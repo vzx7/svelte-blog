@@ -1,5 +1,26 @@
 <script>
-  //export let name;
+  /**
+   * Метод для открытия мобильного меню
+   * @param {object} evt
+   **/
+  const handleBurgerClick = evt => {
+    evt.currentTarget.classList.toggle("is-active");
+    navMenu.classList.toggle("is-active");
+  };
+
+  /**
+   * Метод для клика мо меню
+   * @param {object} evt
+   **/
+  const handleMenuClick = evt => {
+    const menuList = document.getElementsByClassName("navbar-item");
+    if (menuList) {
+      for (let x = 0; x < menuList.length; x++) {
+        menuList.item(x).classList.remove("is-active");
+      }
+    }
+    evt.currentTarget.classList.add("is-active");
+  };
 </script>
 
 <style lang="scss">
@@ -10,26 +31,35 @@
   }
 </style>
 
-<section class="hero is-medium is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-8-desktop is-offset-2-desktop">
-          <h1 class="title is-2 is-spaced">Hello Bulma!</h1>
-          <h2 class="subtitle is-4">
-            Congratulations! You're running the
-            <strong>Bulma start</strong>
-            project.
-            <br />
-            It includes everything you need to
-            <strong>build your own website</strong>
-            with Bulma.
-          </h2>
-        </div>
-      </div>
+<nav class="navbar is-primary">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="" class="navbar-item" style="font-weight: bold">
+        Приход Екатеринбурга
+      </a>
+      <span
+        data-target="navMenu"
+        class="navbar-burger burger"
+        on:click={handleBurgerClick}>
+        <span />
+        <span />
+        <span />
+      </span>
     </div>
   </div>
-</section>
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-end">
+      <a href="#" class="navbar-item is-active" on:click={handleMenuClick}>
+        Home
+      </a>
+      <a href="#" class="navbar-item" on:click={handleMenuClick}>About</a>
+      <a href="#" class="navbar-item" on:click={handleMenuClick}>Evente</a>
+      <a href="#" class="navbar-item" on:click={handleMenuClick}>Other</a>
+      <a href="#" class="navbar-item" on:click={handleMenuClick}>All</a>
+    </div>
+  </div>
+</nav>
+
 <section>
   <div class="columns">
     <div class="column">First column</div>
